@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import UseFireStore from '../../firebase/UseFireStore';
-import { filterProducts } from '../../Store/productsStore';
+import {  sendData } from '../../Store/productsStore';
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
 import './Header.css'
@@ -32,9 +32,7 @@ const SideBar = ({ show, onHide }) => {
         const handleInput = (category) => {
             console.log(category)
             const filteredItems = products.filter((item) => item.category === category);
-            dispatch(filterProducts( category==="all" ? products:filteredItems))
-
-            dispatch(filterProducts( category==="all" ? products : filteredItems))
+            dispatch(sendData( category==="all" ? products:filteredItems))
             navigate('/categoryselect')
             onHide(true)
         };

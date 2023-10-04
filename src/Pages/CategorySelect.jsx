@@ -5,7 +5,7 @@ import styles from './ProductPage.module.css';
 import Pagination from "../Components/Products/Pagination.jsx";
 
 const CategorySelect = () => {
-    const filteredProducts = useSelector((state) => state.cart.filteredProducts);
+    const filteredProducts = useSelector((state) => state.cart.searchedProduct);
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage, setPostsPerPage] = useState(5);
     const lastPostIndex = currentPage * postsPerPage;

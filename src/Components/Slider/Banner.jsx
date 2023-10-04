@@ -31,8 +31,8 @@ const Banner = () => {
                         modules={[Autoplay]}
                         className="mySwiper"
                     >
-                        <SwiperSlide>
-                            <img src={banner1} className='w-100' loading="lazy" />
+                        <SwiperSlide style={{minHeight:"300px"}}>
+                            <img src={banner1} className='w-100 ' style={{minHeight:"300px"}} loading="lazy" />
                             <div className='text'>
                                 <p className='text-danger fw-bold'>SUPERCHARGED FOR PROS</p>
                                 <h1 className='text-black display-5 fw-bold'>Special Sale</h1>
@@ -40,8 +40,8 @@ const Banner = () => {
                                 <NavLink to="/products" className="btn" style={{ backgroundColor: "rgb(5, 33, 46)", padding: "10px 15px", color: "white", borderRadius: "15px" }}>Buy Now</NavLink>
                             </div>
                         </SwiperSlide>
-                        <SwiperSlide>
-                            <img src={banner2} className='w-100' loading="lazy" />
+                        <SwiperSlide style={{minHeight:"300px"}}>
+                            <img src={banner2} className='w-100 ' style={{minHeight:"300px"}} loading="lazy" />
                             <div className='text'>
                                 <p className='text-danger fw-bold'>SUPERCHARGED FOR PROS</p>
                                 <h1 className='text-black display-5 fw-bold'>iPad S13+ Pro</h1>

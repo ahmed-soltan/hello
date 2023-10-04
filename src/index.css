@@ -4,11 +4,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
 a{
   color: white !important;
 }
@@ -21,14 +16,14 @@ li{
 }
 #root{
   overflow-x: hidden;
-  font-family: 'Open Sans', sans-serif;
-  font-family: 'Nunito Sans', sans-serif;
-  font-family: 'Inter', sans-serif;
+  /* font-family: 'Open Sans', sans-serif;
   font-family: 'Cairo', sans-serif;
-  font-family: 'Dancing Script', cursive;
+  font-family: 'Poppins', sans-serif; */
   font-family: 'Pacifico', cursive;
+  font-family: 'Dancing Script', cursive;
   font-family: 'Raleway', sans-serif !important;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Inter', sans-serif;
+  font-family: 'Nunito Sans', sans-serif;
 }
 i{
   cursor: pointer;
