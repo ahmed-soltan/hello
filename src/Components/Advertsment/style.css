@@ -1,0 +1,5 @@
+@media(max-width:786px){
+    .adContainer div{
+    width: 100% !important;
+    }
+}

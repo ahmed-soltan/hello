@@ -1,0 +1,29 @@
+.text{
+    position: absolute;
+    top: 50px;
+    left: 30px;
+}
+.small-text{
+    position: absolute;
+    top: 30px;
+    left: 10px;
+    z-index: 1100;
+}
+@media (max-width: 968px){
+    h4{
+        font-size: 45px !important;
+    }
+    p{
+        font-size: 25px !important;
+        width: 300px !important;
+    }
+}
+@media (max-width: 768px){
+    h4{
+        font-size: 30px !important;
+    }
+    p{
+        font-size: 18px !important;
+        width: 200px !important;
+    }
+}
