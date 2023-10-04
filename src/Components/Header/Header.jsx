@@ -26,24 +26,24 @@ export default function Header() {
     return (
         <Fragment>
             <FirstNav/>
-            <div className='container-fluid py-3 ps-4 d-flex flex-column' style={{ backgroundColor: "rgb(5, 33, 46)" }}>
-                <nav className='d-flex align-items-center justify-content-around gap-5'>
-                    <div className='logo d-flex align-items-center justify-content-between gap-5'>
+            <div className='container-fluid py-3 d-flex flex-column ' style={{ backgroundColor: "rgb(5, 33, 46)" }}>
+                <nav className='d-flex align-items-center justify-content-between gap-5 px-3'>
+                    <div className='logo d-flex align-items-center justify-content-between' style={{width:"200px"}}>
                         <NavLink to='/' className='text-white mt-2 fs-1'>Hinamori</NavLink>
                         <i onClick={() => setShowBasic(!showBasic)} className='fa-solid fa-bars text-white fs-4'></i>
                     </div>
                      <SearchBar/>
-                    <div className='nav d-flex align-items-center '>
+                    <div className='nav d-flex align-items-center justify-content-center '>
                         <ul className='d-flex justify-content-between mt-3 gap-5 navLinks'>
                             <NavLink  to="/favorite" className='d-flex align-items-center gap-3 text-white' style={{ width: "100px" }}>
                                 <i className="fa-regular fa-heart fs-2"></i>
                                 <NavLink to='/favorite' className='m-0 text-white'>Favorite wishList</NavLink>
                             </NavLink>
-                            <NavLink className='d-flex align-items-center gap-3 text-white' style={{ width: "250px" }}>
+                            <NavLink className='d-flex align-items-center gap-3 text-white'>
                                 <i className="fa-regular fa-user fs-2"></i>
                                 <div className='d-flex flex-column'>
-                                    {user ? <NavLink className="text-white" onClick={() => auth.signOut() & navigate('/')}>
-                                        Sign out
+                                    {user ? <NavLink className="text-white account" onClick={() => auth.signOut() & navigate('/')}>
+                                        Signout
                                     </NavLink> : <NavLink to="/login" className='m-0 text-white'>Login</NavLink>}
 
                                     <NavLink className='m-0 text-white'>Account</NavLink>
@@ -58,7 +58,7 @@ export default function Header() {
 
                             </NavLink>
                             {user ? (
-                                <NavLink className='d-flex align-items-center gap-3 text-white' style={{ width: "100%" }}>
+                                <NavLink className='d-flex align-items-center gap-3 text-white user' style={{ width: "100%" }}>
                                     {user.photoURL && <img src={user.photoURL} style={{width:"40px" , heigh:"40px" , borderRadius:"50%"}}/>}
                                     <span className='fs-5'>{user.displayName ? `Hi, ${user.displayName}` : user.email}</span>
                                 </NavLink>

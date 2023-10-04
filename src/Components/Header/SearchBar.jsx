@@ -35,7 +35,7 @@ const SearchBar = () => {
     }
     return (
         <div className='search'>
-            <form className='d-flex align-items-center form' >
+            <form className='d-flex align-items-center justify-content-end form w-100' >
                 <input className='input' placeholder='search' onChange={handleSearch} value={filterValue} type='text' />
                 {filter.length === 0 ?<i className="fa-solid fa-magnifying-glass bg-warning text-black search-icon" ></i>:<i className="fa-solid fa-x bg-warning text-black search-icon" onClick={()=>clearSearch()}></i>}
             </form>

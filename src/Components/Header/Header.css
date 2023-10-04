@@ -17,6 +17,7 @@
 }
 .search {
   position: relative;
+  width: 650px;
 }
 .input {
   min-width: 500px;
@@ -64,6 +65,7 @@
   transition: 0.5s;
   width: 300px !important;
 }
+
 .hideSideBars {
   position: fixed;
   left: 0;
@@ -80,6 +82,7 @@
   z-index: 2000;
   transform: translateX(0);
 }
+
 @media (max-width: 768px) {
   .fa-bars {
     display: block !important;
@@ -98,4 +101,8 @@
   .search {
     display: none;
   }
+  .user{
+    display: none !important;
+  }
+
 }

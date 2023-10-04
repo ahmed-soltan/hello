@@ -32,7 +32,7 @@ const SideBar = ({ show, onHide }) => {
         const handleInput = (category) => {
             console.log(category)
             const filteredItems = products.filter((item) => item.category === category);
-            dispatch(filterProducts( filteredItems))
+            dispatch(filterProducts( category==="all" ? products:filteredItems))
             navigate('/categoryselect')
             onHide(true)
         };
