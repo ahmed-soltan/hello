@@ -22,7 +22,6 @@ const GoogleTranslate = () => {
   return (
     <div className="google-translate-container">
      <div className="d-flex align-items-center justify-content-center">
-       <i className="fa-solid fa-globe"></i>
        <div
         id="google_translate_element"
         className="google-translate-element"
