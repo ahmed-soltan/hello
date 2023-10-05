@@ -24,7 +24,7 @@ const Total = () => {
       if(!user){
         toast.error(<span className='fs-6'>please login first</span>)
       }else{
-        fetch("http://localhost:5000/create-checkout-session", {
+        fetch("https://server-one-wheat-91.vercel.app/create-checkout-session", {
         method:"POST",
         headers:{
           "Content-Type":"application/json"

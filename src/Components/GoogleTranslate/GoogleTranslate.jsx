@@ -10,7 +10,10 @@ const GoogleTranslate = () => {
     document.body.appendChild(script);
 
     window.googleTranslateElementInit = () => {
-      new window.google.translate.TranslateElement("google_translate_element");
+
+      new window.google.translate.TranslateElement(      {
+        pageLanguage:"en",
+      },"google_translate_element");
     };
 
     return () => {

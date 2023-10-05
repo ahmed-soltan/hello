@@ -3,7 +3,7 @@ import{ useState, useContext , useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { AuthContext } from '../../Context/Auth';
 import SideBar from './SideBar';
-
+import FirstNav from './FirstNav'
 export default function Nav() {
     const { user } = useContext(AuthContext)
     const [show, setShow] = useState(false);
@@ -18,7 +18,7 @@ export default function Nav() {
         setShow(value);
     };
     return (
-        <nav style={{ backgroundColor: "rgb(32, 61, 75)" }} className='py-1'>
+        <nav style={{ backgroundColor: "rgb(32, 61, 75)" }} className='py-1 d-flex align-items-center justify-content-between'>
             <ul className='mt-2 d-flex align-items-center flex-wrap'>
                 <SideBar show={show} onHide={handleHide} />
                 <div className='d-flex align-items-center justify-content-center'>
@@ -32,6 +32,7 @@ export default function Nav() {
                 {user && user.email === "admin@admin.com" ? <NavLink to="/dashboard" className="text-white mx-3 fs-5" >DASHBOARD</NavLink> : null}
 
             </ul>
+            <FirstNav/>
         </nav>
     );
 }

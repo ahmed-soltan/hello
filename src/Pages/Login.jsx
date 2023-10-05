@@ -9,7 +9,6 @@ import googleLogo from '../assets/images/Google.jpeg'
 import { auth , provider } from '../firebase/firebase';
 import { NavLink } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
-
 const initialState = {email :'' , password: ""}
 const Login = () => {
   const navigate = useNavigate();

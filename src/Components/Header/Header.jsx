@@ -6,7 +6,6 @@ import { AuthContext } from '../../Context/Auth';
 import Nav from './Nav';
 import { useSelector } from 'react-redux';
 import SearchBar from './SearchBar';
-// import FirstNav from './FirstNav';
 export default function Header() {
     const [showBasic, setShowBasic] = useState(false);
     const { user } = useContext(AuthContext)
