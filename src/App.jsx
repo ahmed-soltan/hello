@@ -37,24 +37,24 @@ const App = () => {
             <Header />
             <div>
               <Routes>
-                <Route path='/' element={<Home />} />
-                <Route path='/login' element={<Login />} />
-                <Route path='/signup' element={<Signup />} />
-                <Route path='/products' element={<ProductsData />} />
-                <Route path='/cart' element={<Cart />} />
-                <Route path='/favorite' element={<Favorite />} />
-                <Route element={<PrivateRoutes />}>
+                <Route path='/' exact element={<Home />} />
+                <Route path='/login' exact element={<Login />} />
+                <Route path='/signup' exact element={<Signup />} />
+                <Route path='/products' exact element={<ProductsData />} />
+                <Route path='/cart' exact element={<Cart />} />
+                <Route path='/favorite' exact element={<Favorite />} />
+                <Route exact element={<PrivateRoutes />}>
 
-                  <Route path='/dashboard' element={<Dashboard />} />
+                  <Route path='/dashboard' exact element={<Dashboard />} />
                 </Route>
-                <Route path='/contact' element={<Contact />} />
-                <Route path='/blog' element={<Blog />} />
+                <Route path='/contact' exact element={<Contact />} />
+                <Route path='/blog' exact element={<Blog />} />
 
-                <Route path='/cancel' element={<Cancel />} />
-                <Route path='/success' element={<Success />} />
-                <Route path='/singleproduct' element={<SingleProduct />} />
-                <Route path='/categoryselect' element={<CategorySelect />} />
-                <Route path='*' element={<NotFound />} />
+                <Route path='/cancel' exact element={<Cancel />} />
+                <Route path='/success' exact element={<Success />} />
+                <Route path='/singleproduct' exact element={<SingleProduct />} />
+                <Route path='/categoryselect' exact element={<CategorySelect />} />
+                <Route path='*' exact element={<NotFound />} />
               </Routes>
             </div>
             <Footer /></>}

@@ -40,9 +40,6 @@
   color: #fff;
   
 }
-.skiptranslate.goog-te-gadget select:nth-child(1) {
-  display: none !important;
-}
 .skiptranslate.goog-te-gadget:nth-child(2) {
   display: none !important;
 }

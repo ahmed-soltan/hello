@@ -42,8 +42,8 @@ const Signup = () => {
     <div className='container mt-5 d-flex align-items-center justify-content-center gap-5 flex-wrap pb-4'>
       <div className='d-flex align-items-start justify-content-center flex-column' style={{ width: "500px" }}>
         <h1>Register to Hinamori Store To Get All Offers </h1>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, quia. Maiores facere laborum voluptates vitae quas doloribus cum, officiis, dolore provident ratione suscipit deleniti.</p>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, quia. Maiores facere laborum voluptates vitae quas doloribus cum, officiis, dolore provident ratione suscipit deleniti.</p>
+        <p className='w-100'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, quia. Maiores facere laborum voluptates vitae quas doloribus cum, officiis, dolore provident ratione suscipit deleniti.</p>
+        <p className='w-100'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, quia. Maiores facere laborum voluptates vitae quas doloribus cum, officiis, dolore provident ratione suscipit deleniti.</p>
 
       </div>
       <form className='' style={{ width: "500px" }} onSubmit={handleSubmit}>
@@ -67,9 +67,9 @@ const Signup = () => {
           <MDBInput className='mb-4' type='password' value={input.confirmPassword}  autoComplete='off' name='confirmPassword' onChange={handleInput} />
         </div>
 
-        <MDBRow className='mb-2'>
+        <MDBRow className='mb-2 w-100'>
           <MDBCol>
-            <p>Have an Account ?  <NavLink to="/login" className="another">Login Now</NavLink> </p>
+            <p className='w-100'>Have an Account ?  <NavLink to="/login" className="another">Sign in Now</NavLink> </p>
 
           </MDBCol>
         </MDBRow>

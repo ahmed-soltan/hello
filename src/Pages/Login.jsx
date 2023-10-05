@@ -1,4 +1,4 @@
-import  { useState } from 'react';
+import  { useEffect, useState } from 'react';
 import {
   MDBInput,
   MDBCol,
@@ -16,6 +16,15 @@ const Login = () => {
 
   const [input ,setInput] = useState(initialState)
   const [errorMessage, setErrorMessage] = useState("")
+  useEffect(()=>{
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      if (user) {
+        // The user is signed in, redirect them to the home page
+        navigate("/");
+      }
+      })
+      return unsubscribe
+  },[navigate])
   const handleInput=({target})=>{
      setInput({
       ...input,
@@ -24,13 +33,7 @@ const Login = () => {
      console.log(input)
   }
   const handleClick = async () => {
-    try {
-      const result = await auth.signInWithPopup(provider);
-      console.log(result);
-      navigate('/');
-    } catch (error) {
-      console.log(error) // Update the error message
-    }
+    await auth.signInWithPopup(provider);
   };
   
   const handleSubmit = async(e) =>{
@@ -39,7 +42,6 @@ const Login = () => {
       await auth.signInWithEmailAndPassword(input.email, input.password);
       console.log(input)
       setInput(initialState)
-        navigate('/');
     } catch (error) {
       setErrorMessage("invalid email or password")
       console.log(errorMessage)
@@ -49,7 +51,7 @@ const Login = () => {
   return (
     <div className='container mt-5 d-flex align-items-center justify-content-center gap-5 flex-wrap pb-4'>
       <div className='d-flex align-items-lg-start align-items-sm-start justify-content-center flex-column' style={{ width: "500px" }}>
-        <h1>Log in Hinamori Store To Get All Offers </h1>
+        <h1>Sign in Hinamori Store To Get All Offers </h1>
         <p className='w-100'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, quia. Maiores facere laborum voluptates vitae quas doloribus cum, officiis, dolore provident ratione suscipit deleniti.</p>
         <p className='w-100'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, quia. Maiores facere laborum voluptates vitae quas doloribus cum, officiis, dolore provident ratione suscipit deleniti.</p>
 
@@ -67,7 +69,7 @@ const Login = () => {
 
         <MDBRow className='mb-2'>
           <MDBCol>
-            <p>Do not Have an Account ?  <NavLink to="/signup" className="another">Create Account</NavLink> </p>
+            <p className='w-100'>Do not Have an Account ?  <NavLink to="/signup" className="another">Create New Account</NavLink> </p>
 
           </MDBCol>
         </MDBRow>

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useForm, ValidationError } from "@formspree/react";
 import { NavLink } from "react-router-dom";
 import UseFireStore from "../firebase/UseFireStore";
@@ -13,7 +13,6 @@ const Contact = () => {
   const [state, handleSubmit] = useForm("maygpgdg");
   const [message, setMessage] = useState(initialState);
   const { addMessage } = UseFireStore();
-  const [video, setVideo] = useState([]);
   const handleInput = ({ target }) => {
     setMessage({
       ...message,
@@ -21,13 +20,6 @@ const Contact = () => {
     });
   };
 
-  useEffect(() => {
-    fetch(
-      "https://www.eporner.com/api/v2/video/search/?query=teen&per_page=10&page=2&thumbsize=big&order=top-weekly&gay=1&lq=1&format=json"
-    )
-      .then((res) => res.json())
-      .then((data) => setVideo(data.videos));
-  }, []);
 
   const handleMessage = async (e) => {
     e.preventDefault();
@@ -59,14 +51,6 @@ const Contact = () => {
   return (
     <div style={{ backgroundColor: "#f1f1f1" }} className="py-5">
       <div className="container my-5">
-        {video &&
-          video.map((item) => (
-            <div key={item.id}>
-              <img src={item.default_thumb.src} />
-              <video controls></video>
-              <h1>{item.title}</h1>
-            </div>
-          ))}
         <h1 className="text-center text-black my-5">CONTACT US</h1>
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3435.2810849211096!2d31.004595576354735!3d30.569609574663446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f7d7c785f0d073%3A0x9c93909ec94eced3!2sTOWN%20TEAM!5e0!3m2!1sen!2seg!4v1695720399181!5m2!1sen!2seg"
