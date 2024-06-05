@@ -14,16 +14,16 @@ li{
   list-style: none;
   color: aliceblue;
 }
-#root{
+#root , body{
   overflow-x: hidden;
   /* font-family: 'Open Sans', sans-serif;
   font-family: 'Cairo', sans-serif;
   font-family: 'Poppins', sans-serif; */
-  font-family: 'Pacifico', cursive;
   font-family: 'Dancing Script', cursive;
-  font-family: 'Raleway', sans-serif !important;
   font-family: 'Inter', sans-serif;
   font-family: 'Nunito Sans', sans-serif;
+  font-family: 'Pacifico', cursive;
+  font-family: 'Raleway', sans-serif !important;
 }
 i{
   cursor: pointer;

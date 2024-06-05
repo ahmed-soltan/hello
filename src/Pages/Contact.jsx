@@ -13,6 +13,8 @@ const Contact = () => {
   const [state, handleSubmit] = useForm("maygpgdg");
   const [message, setMessage] = useState(initialState);
   const { addMessage } = UseFireStore();
+
+  
   const handleInput = ({ target }) => {
     setMessage({
       ...message,

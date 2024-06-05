@@ -15,7 +15,7 @@ export default function LatestNews() {
         <div style={{ padding: "30px" }}>
             <h3 className='text-black text-left fw-bold my-4'>Our Latest News</h3>
             <div className='row'>
-                <div className='col-lg-3 col-md-6 col-sm-12'>
+                <div className='col-lg-3 col-md-6 col-sm-12 my-2'>
                     <MDBCard>
                         <MDBCardImage style={{ height: "300px" }} src={Blog1} position='top' loading="lazy" alt='...' />
                         <MDBCardBody>

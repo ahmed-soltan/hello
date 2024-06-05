@@ -18,6 +18,7 @@ const DashBoardAddProduct = () => {
   const [input , setInput] = useState(initialState)
   const {addProduct} = UseFireStore()
   const toggleShow = () => setBasicModal(!basicModal);
+
   const uploadImage = async (e) => {
     const file = e.target.files[0];
     const storageRef = storage.ref(file.name);
@@ -34,6 +35,7 @@ const DashBoardAddProduct = () => {
         console.log(err);
     }
 };
+
   const handleInputs=({target})=>{
      setInput({
       ...input,

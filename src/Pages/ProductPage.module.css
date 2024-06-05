@@ -25,7 +25,7 @@ hr{
     align-items: flex-start;
     justify-content: flex-start;
     background-color: #f5f5f5;
-    padding: 40px 20px 40px 0;
+    padding: 40px 30px;
     
 }
 .showFilter{
@@ -46,7 +46,10 @@ hr{
     display: none;
 }
 .search{
-    max-width: 500px !important;
+    width: 100% !important;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }
 @media (max-width: 968px){
     .container{
@@ -63,9 +66,7 @@ hr{
     .search{
         width: 100% !important;
     }
-    .open{
-        display: block;
-    }
+
     .Filter{
         display: none;
     }

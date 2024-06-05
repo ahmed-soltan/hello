@@ -22,10 +22,11 @@
 /* Style for the language selector dropdown */
 .google-translate-element select {
   appearance: none !important;
-  width: 250px;
+  max-width: 250px;
   padding: 3px 10px;
-  background-color: transparent;
-  border: 1px solid white !important;
+  background-color: white !important;
+  border: 1px solid black !important;
+  border-radius: 30px;
   color: #888;
   font-size: 16px;
 }

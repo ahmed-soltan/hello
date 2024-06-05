@@ -53,6 +53,7 @@ const SideBar = ({ show, onHide }) => {
                 {data}
             </ul>
             <hr className='w-100' />
+            
         </div>
     );
 };

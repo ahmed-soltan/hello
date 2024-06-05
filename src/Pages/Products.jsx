@@ -13,33 +13,36 @@ const ProductsData = () => {
   const filteredProducts = useSelector((state) => state.cart.filteredProducts);
   const [showBasic, setShowBasic] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage, setPostsPerPage] = useState(6);
+  const [postsPerPage, setPostsPerPage] = useState(8);
    useEffect(()=>{
     setShowBasic(false)
    },[])
    const lastPostIndex = currentPage * postsPerPage;
    const firstPostIndex = lastPostIndex - postsPerPage;
    const currentPosts = filteredProducts.slice(firstPostIndex, lastPostIndex);
+   const show = () =>{
+      setShowBasic(false)
+   }
   return (
-    <div className='px-3'>
+    <div >
       <div className={styles.container}>
-        <i className='fa-solid fa-bars fs-3 text-black open ms-auto' onClick={()=>setShowBasic(!showBasic)}></i>
-        <div className={styles.Filter }>
-          <Filter />
+        <i className='fa-solid fa-bars fs-3 text-black open' onClick={()=>setShowBasic(showBasic ? !showBasic : true)}></i>
+        <div className={styles.Filter}>
+          <Filter  />
           <FilterByPrice />
           <FilterByRating />
         </div>
         <div className={showBasic ? styles.showFilter : styles.hideFilter}>
-          <Filter />
-          <FilterByPrice />
-          <FilterByRating />
+          <Filter show={show} />
+          <FilterByPrice show={show} />
+          <FilterByRating show={show} />
         </div>
-        <div>
-          <div className='row d-flex align-items-center justify-content-center search' >
+        <div style={{width:"100%"}}>
+          <div className='row d-flex align-items-center justify-content-center search ms-2 my-3' style={{width:"100%"}} >
             <FilterBySearch />
           </div>
-          <div className={styles.products}>
-            <div className='row d-flex align-items-center justify-content-lg-start justify-content-sm-center'>
+          <div className={styles.products} style={{width:"100%"}}>
+            <div className='row  ' style={{minWidth:"100%"}}>
               {currentPosts && currentPosts.length > 0 ? (
                 currentPosts.map((product) => (
                   <Product product={product} key={product.id} />

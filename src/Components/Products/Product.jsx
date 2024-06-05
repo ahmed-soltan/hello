@@ -29,8 +29,8 @@ const Product = ({ product }) => {
     }
 
     return (
-        <div style={{ width: "370px" }}  className='my-3'>
-            <MDBCard className='position-relative p-1 w-100'>
+        <div className='col-lg-3 col-sm-12 mb-4'>
+            <MDBCard className='position-relative w-100'>
                 <div className=''>
                     <i className={`${product.isClicked ? "fa-solid" : "fa-regular"} fa-heart onTop text-black`} onClick={() =>addProductsToFav({
                             id: product.id,

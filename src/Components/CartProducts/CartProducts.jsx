@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   incrementQuantity,
@@ -13,19 +12,7 @@ import { ToastContainer, toast } from "react-toastify";
 const CartProducts = () => {
   const cartProducts = useSelector((state) => state.cart.cartProducts);
   const dispatch = useDispatch();
-  const CartProduct = useSelector((state) => state.cart.cartProducts);
-  const [totalAmount, setTotalAmount] = useState(0);
-  useEffect(() => {
-    let price = 0;
-    CartProduct &&
-      CartProduct.map((item) => {
-        price +=
-          (item.price - Math.floor((item.discount * item.price) / 100)) *
-          item.quantity;
-        return price;
-      });
-    setTotalAmount(price.toFixed(2));
-  }, [CartProduct]);
+  
   return (
     <div className="my-5 table-responsive">
       {cartProducts.length !== 0 ? (
@@ -83,6 +70,7 @@ const CartProducts = () => {
                         className="fw-normal mb-1 mx-3 fs-5"
                         value={product.quantity}
                         style={{ width: "100px" }}
+                        readOnly="true"
                       />
                       <span
                         className="fs-4 bg-black text-white px-3 py-1"
@@ -93,7 +81,8 @@ const CartProducts = () => {
                       </span>
                     </td>
                     <td>
-                      <p className="fw-normal mb-1">${totalAmount}</p>
+                      <p className="fw-normal mb-1">${product.discount ? product.quantity * (product.price -
+                          Math.floor((product.discount * product.price) / 100)) : product.quantity * product.price}</p>
                     </td>
 
                     <td>

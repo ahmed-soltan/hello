@@ -17,6 +17,8 @@ import PropTypes from "prop-types";
 
 import { useDispatch } from 'react-redux'
 import { addToCart } from '../../Store/productsStore.jsx';
+import { ToastContainer, toast } from 'react-toastify';
+
 export default function View({ productData }) {
     const [basicModal, setBasicModal] = useState(false);
     const toggleShow = () => setBasicModal(!basicModal);
@@ -74,7 +76,7 @@ export default function View({ productData }) {
                             discount: productData.discount,
                             rating: productData.rating,
                             description: productData.description,
-                        })}>Add To Cart</MDBBtn>
+                        }) & toast.success(<span className='fs-6'>{productData.title} is added to the cart</span>)}>Add To Cart</MDBBtn>
                             <MDBBtn color='primary' onClick={toggleShow}>
                                 Close
                             </MDBBtn>
@@ -82,6 +84,19 @@ export default function View({ productData }) {
                     </MDBModalContent>
                 </MDBModalDialog>
             </MDBModal>
+            <ToastContainer
+                position='top-left'
+                autoClose={2000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                pauseOnHover
+                draggable
+                theme='light'
+
+            />
         </>
     );
 }

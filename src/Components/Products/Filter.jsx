@@ -2,12 +2,17 @@ import { useEffect, useState } from 'react';
 import UseFireStore from '../../firebase/UseFireStore';
 import { filterProducts } from '../../Store/productsStore';
 import {useDispatch} from 'react-redux'
+import PropTypes from "prop-types";
 
 import './style.css'
-const Filter = () => {
+const Filter = ({show}) => {
   const { products } = UseFireStore();
   const [data, setData] = useState([])
   const dispatch = useDispatch()
+  const change = () =>{
+      show(true)
+      console.log("hello")
+  }
   useEffect(() => {
     const displayMenuButtons = () => {
       const categories = products.reduce((values, item) => {
@@ -17,7 +22,7 @@ const Filter = () => {
         return values;
       }, ['all']);
       const menuOptions = categories.map((category) => (
-        <button onClick={()=>handleInput(category)} className='btn btn-black categoryBtn fw-bold' value={category==="all" ? "" : category} key={category}>
+        <button onClick={()=>handleInput(category) & change()} className='btn btn-black categoryBtn fw-bold' value={category==="all" ? "" : category} key={category}>
           {category}
         </button>
       ));
@@ -47,4 +52,8 @@ const Filter = () => {
   );
 };
 
+Filter.propTypes = {
+  show: PropTypes.any.isRequired,
+
+};
 export default Filter;
